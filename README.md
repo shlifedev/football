@@ -1,2 +1,5 @@
 # ZepetoFootball
-Zepeto Soccer
+ 제페토 멀티플레이 월드 축구장 구현 예제 샘플
+
+
+ 유저끼리 축구공을 가지고 노는것을 목적으로 함.
