@@ -1,0 +1,38 @@
+fileFormatVersion: 2
+guid: a59526141489063499e3c57d71a8e7a0
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\n// /*\r\n//  auto completed by jetbrain
+    rider, don''t remove it!\r\n//  author by shlifedev@gmail.com(https://github.com/shlifedev)\r\n//
+    */\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst
+    UnityEngine_1 = require(\"UnityEngine\");\r\nconst ZEPETO_Character_Controller_1
+    = require(\"ZEPETO.Character.Controller\");\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst
+    PlayerManager_1 = require(\"./PlayerManager\");\r\nconst Ball_1 = require(\"./Ball\");\r\nclass
+    FallDetector extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    OnTriggerStay(collider)
+    {\r\n        console.log(collider.name + \" is falled! LyaerMask => \" + UnityEngine_1.LayerMask.LayerToName(collider.gameObject.layer));\r\n       
+    if (UnityEngine_1.LayerMask.LayerToName(collider.gameObject.layer) === \"Character\")
+    {\r\n            let character = collider.GetComponent($typeof(ZEPETO_Character_Controller_1.ZepetoCharacter));\r\n           
+    character.Teleport(this.respawnPoint_Center.transform.position, UnityEngine_1.Quaternion.identity);\r\n           
+    character.transform.position = this.respawnPoint_Center.transform.position;\r\n       
+    }\r\n        else if (UnityEngine_1.LayerMask.LayerToName(collider.gameObject.layer)
+    === \"Ball\") {\r\n            collider.transform.position = this.respawnPoint_Center.transform.position;\r\n           
+    let ball = collider.GetComponent($typeof(Ball_1.default));\r\n            ball.rigidBody.velocity
+    = new UnityEngine_1.Vector3(0, 0, 0);\r\n        }\r\n    }\r\n}\r\nexports.default
+    = FallDetector;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiRmFsbERldGVjdG9yLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiRmFsbERldGVjdG9yLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSxLQUFLO0FBQ0wsc0RBQXNEO0FBQ3RELCtEQUErRDtBQUMvRCxLQUFLOztBQUVMLDZDQUFrRjtBQUNsRiw2RUFBOEQ7QUFDOUQsaURBQXNEO0FBQ3RELG1EQUE0QztBQUM1QyxpQ0FBMEI7QUFFMUIsTUFBcUIsWUFBYSxTQUFRLHFDQUFxQjtJQUUzRCxhQUFhLENBQUMsUUFBbUI7UUFDN0IsT0FBTyxDQUFDLEdBQUcsQ0FBQyxRQUFRLENBQUMsSUFBSSxHQUFFLDJCQUEyQixHQUFHLHVCQUFTLENBQUMsV0FBVyxDQUFDLFFBQVEsQ0FBQyxVQUFVLENBQUMsS0FBSyxDQUFDLENBQUMsQ0FBQztRQUMzRyxJQUFHLHVCQUFTLENBQUMsV0FBVyxDQUFDLFFBQVEsQ0FBQyxVQUFVLENBQUMsS0FBSyxDQUFDLEtBQUssV0FBVyxFQUFDO1lBQ2hFLElBQUksU0FBUyxHQUFxQixRQUFRLENBQUMsWUFBWSxTQUFDLDZDQUFlLEVBQUcsQ0FBQztZQUN2RSxTQUFTLENBQUMsUUFBUSxDQUFDLElBQUksQ0FBQyxtQkFBbUIsQ0FBQyxTQUFTLENBQUMsUUFBUSxFQUFFLHdCQUFVLENBQUMsUUFBUSxDQUFDLENBQUM7WUFDckYsU0FBUyxDQUFDLFNBQVMsQ0FBQyxRQUFRLEdBQUcsSUFBSSxDQUFDLG1CQUFtQixDQUFDLFNBQVMsQ0FBQyxRQUFRLENBQUM7U0FDbEY7YUFDSSxJQUFHLHVCQUFTLENBQUMsV0FBVyxDQUFDLFFBQVEsQ0FBQyxVQUFVLENBQUMsS0FBSyxDQUFDLEtBQUssTUFBTSxFQUFDO1lBQ2hFLFFBQVEsQ0FBQyxTQUFTLENBQUMsUUFBUSxHQUFHLElBQUksQ0FBQyxtQkFBbUIsQ0FBQyxTQUFTLENBQUMsUUFBUSxDQUFDO1lBQzFFLElBQUksSUFBSSxHQUFHLFFBQVEsQ0FBQyxZQUFZLFNBQUMsY0FBSSxFQUFHLENBQUM7WUFDekMsSUFBSSxDQUFDLFNBQVMsQ0FBQyxRQUFRLEdBQUcsSUFBSSxxQkFBTyxDQUFDLENBQUMsRUFBQyxDQUFDLEVBQUMsQ0FBQyxDQUFDLENBQUM7U0FFaEQ7SUFDTCxDQUFDO0NBQ0o7QUFoQkQsK0JBZ0JDIn0=","assetPath":"Assets/Multiplay/ClientScript/FallDetector.ts","manifest":{"properties":[{"assembly":"UnityEngine.CoreModule","name":"respawnPoint_Center","type":"UnityEngine.GameObject","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"FallDetector","description":""},"isCompiled":true}'
+  typescriptHash: 948219cbc381f931d29d67def7e5d43f

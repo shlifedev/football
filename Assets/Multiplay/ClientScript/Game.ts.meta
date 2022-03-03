@@ -1,0 +1,41 @@
+fileFormatVersion: 2
+guid: 07ff6c6468236d048b9ccd95c34c1584
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\n// /*\r\n//  auto completed by jetbrain
+    rider, don''t remove it!\r\n//  author by shlifedev@gmail.com(https://github.com/shlifedev)\r\n//
+    */\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst
+    UnityEngine_1 = require(\"UnityEngine\");\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst
+    PlayerManager_1 = require(\"./PlayerManager\");\r\nconst SoccerPlayer_1 = require(\"./SoccerPlayer\");\r\nclass
+    Game extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    static get Instance()
+    {\r\n        if (this._instance == null) {\r\n            this._instance = UnityEngine_1.GameObject.FindObjectOfType($typeof(Game));\r\n       
+    }\r\n        return this._instance;\r\n    }\r\n    AddGoalScore(blueTeam) {\r\n       
+    console.log(''goal! red team score : '' + this.redTeamScore);\r\n        console.log(''goal!
+    blue team score : '' + this.blueTeamScore);\r\n        if (blueTeam)\r\n           
+    this.blueTeamScore += 1;\r\n        else\r\n            this.redTeamScore +=
+    1;\r\n        if (this.blueTeamScoreTextMesh)\r\n            this.blueTeamScoreTextMesh.text
+    = `${this.blueTeamScore}`;\r\n        if (this.redTeamScoreTextMesh)\r\n           
+    this.redTeamScoreTextMesh.text = `${this.redTeamScore}`;\r\n    }\r\n    Start()
+    {\r\n        PlayerManager_1.default.Instance.CreateLocalPlayer(\"shlifedev\",
+    () => {\r\n            var characterGo = PlayerManager_1.default.Instance.GetLocalCharacter().gameObject;\r\n           
+    characterGo.layer = UnityEngine_1.LayerMask.NameToLayer(\"Character\");\r\n           
+    let soccerPlayer = characterGo.AddComponent($typeof(SoccerPlayer_1.default));\r\n           
+    soccerPlayer.kickRadius = 1;\r\n        });\r\n    }\r\n}\r\nexports.default
+    = Game;\r\nGame._instance = null;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiR2FtZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkdhbWUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLEtBQUs7QUFDTCxzREFBc0Q7QUFDdEQsK0RBQStEO0FBQy9ELEtBQUs7O0FBRUwsNkNBQThFO0FBQzlFLGlEQUFxRDtBQUNyRCxtREFBMkM7QUFDM0MsaURBQTBDO0FBRTFDLE1BQXFCLElBQUssU0FBUSxxQ0FBcUI7SUFXNUMsTUFBTSxLQUFLLFFBQVE7UUFDdEIsSUFBSSxJQUFJLENBQUMsU0FBUyxJQUFJLElBQUksRUFBRTtZQUN4QixJQUFJLENBQUMsU0FBUyxHQUFHLHdCQUFVLENBQUMsZ0JBQWdCLFNBQUMsSUFBSSxFQUFHLENBQUM7U0FDeEQ7UUFDRCxPQUFPLElBQUksQ0FBQyxTQUFTLENBQUM7SUFDMUIsQ0FBQztJQUVNLFlBQVksQ0FBQyxRQUFrQjtRQUVsQyxPQUFPLENBQUMsR0FBRyxDQUFDLHlCQUF5QixHQUFHLElBQUksQ0FBQyxZQUFZLENBQUMsQ0FBQTtRQUMxRCxPQUFPLENBQUMsR0FBRyxDQUFDLDBCQUEwQixHQUFHLElBQUksQ0FBQyxhQUFhLENBQUMsQ0FBQTtRQUU1RCxJQUFHLFFBQVE7WUFBRSxJQUFJLENBQUMsYUFBYSxJQUFJLENBQUMsQ0FBQzs7WUFDaEMsSUFBSSxDQUFDLFlBQVksSUFBSSxDQUFDLENBQUM7UUFFNUIsSUFBRyxJQUFJLENBQUMscUJBQXFCO1lBQ3pCLElBQUksQ0FBQyxxQkFBcUIsQ0FBQyxJQUFJLEdBQUcsR0FBRyxJQUFJLENBQUMsYUFBYSxFQUFFLENBQUM7UUFDOUQsSUFBRyxJQUFJLENBQUMsb0JBQW9CO1lBQ3hCLElBQUksQ0FBQyxvQkFBb0IsQ0FBQyxJQUFJLEdBQUcsR0FBRyxJQUFJLENBQUMsWUFBWSxFQUFFLENBQUM7SUFFaEUsQ0FBQztJQUdELEtBQUs7UUFDRCx1QkFBYSxDQUFDLFFBQVEsQ0FBQyxpQkFBaUIsQ0FBQyxXQUFXLEVBQUUsR0FBRSxFQUFFO1lBQ3RELElBQUksV0FBVyxHQUFHLHVCQUFhLENBQUMsUUFBUSxDQUFDLGlCQUFpQixFQUFFLENBQUMsVUFBVSxDQUFDO1lBQ3hFLFdBQVcsQ0FBQyxLQUFLLEdBQUcsdUJBQVMsQ0FBQyxXQUFXLENBQUMsV0FBVyxDQUFDLENBQUM7WUFHdkQsSUFBSSxZQUFZLEdBQUcsV0FBVyxDQUFDLFlBQVksU0FBQyxzQkFBWSxFQUFHLENBQUM7WUFDNUQsWUFBWSxDQUFDLFVBQVUsR0FBRyxDQUFDLENBQUM7UUFFaEMsQ0FBQyxDQUFDLENBQUM7SUFDUCxDQUFDOztBQTVDTCx1QkE4Q0M7QUF0Q2tCLGNBQVMsR0FBUyxJQUFJLENBQUMifQ==","assetPath":"Assets/Multiplay/ClientScript/Game.ts","manifest":{"properties":[{"assembly":"mscorlib","name":"blueTeamScore","type":"System.Int32","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"mscorlib","name":"redTeamScore","type":"System.Int32","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"UnityEngine.TextRenderingModule","name":"blueTeamScoreTextMesh","type":"UnityEngine.TextMesh","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"UnityEngine.TextRenderingModule","name":"redTeamScoreTextMesh","type":"UnityEngine.TextMesh","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"Game","description":""},"isCompiled":true}'
+  typescriptHash: eee64e130dd9890355a95e59d4cdbb9d

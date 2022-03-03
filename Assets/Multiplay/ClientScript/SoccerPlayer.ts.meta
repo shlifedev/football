@@ -1,0 +1,38 @@
+fileFormatVersion: 2
+guid: 3db4ea5b9175ec34c96ea6ede386e3d6
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst Ball_1 = require(\"./Ball\");\r\nconst
+    ZMath_1 = require(\"./ZMath\");\r\nclass SoccerPlayer extends ZEPETO_Script_1.ZepetoScriptBehaviour
+    {\r\n    Awake() {\r\n        this.kickCoolTime = 0.75;\r\n        this.kickPower
+    = 1;\r\n    }\r\n    Update() {\r\n        if (this.kickRemainCoolTime > 0)\r\n           
+    this.kickRemainCoolTime -= UnityEngine_1.Time.deltaTime;\r\n        let colliders
+    = UnityEngine_1.Physics.OverlapSphere(this.transform.position, this.kickRadius,
+    1 << 8);\r\n        colliders.forEach(collider => {\r\n            console.log(collider.name);\r\n           
+    if (!this.ball)\r\n                this.ball = collider.gameObject.GetComponent($typeof(Ball_1.default));\r\n           
+    this.Dribble();\r\n        });\r\n    }\r\n    Dribble() {\r\n        if (this.ball
+    /*&& this.kickRemainCoolTime <= 0*/) {\r\n            this.kickRemainCoolTime
+    = this.kickCoolTime;\r\n            const dir = ZMath_1.default.Sub(this.ball.transform.position,
+    this.transform.position);\r\n            const normalizedDir = dir.normalized;\r\n           
+    this.ball.AddPower(normalizedDir, this.kickPower);\r\n            UnityEngine_1.Debug.DrawRay(this.transform.position,
+    ZMath_1.default.Mul(normalizedDir, 5), UnityEngine_1.Color.red, 1);\r\n       
+    }\r\n    }\r\n}\r\nexports.default = SoccerPlayer;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiU29jY2VyUGxheWVyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiU29jY2VyUGxheWVyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsNkNBQW9GO0FBQ3BGLGlEQUFxRDtBQUNyRCxpQ0FBMEI7QUFDMUIsbUNBQTRCO0FBRTVCLE1BQXFCLFlBQWEsU0FBUSxxQ0FBcUI7SUFRM0QsS0FBSztRQUNELElBQUksQ0FBQyxZQUFZLEdBQUcsSUFBSSxDQUFDO1FBQ3pCLElBQUksQ0FBQyxTQUFTLEdBQUcsQ0FBQyxDQUFDO0lBQ3ZCLENBQUM7SUFDRCxNQUFNO1FBQ0YsSUFBRyxJQUFJLENBQUMsa0JBQWtCLEdBQUcsQ0FBQztZQUMxQixJQUFJLENBQUMsa0JBQWtCLElBQUksa0JBQUksQ0FBQyxTQUFTLENBQUM7UUFDL0MsSUFBSSxTQUFTLEdBQWUscUJBQU8sQ0FBQyxhQUFhLENBQUMsSUFBSSxDQUFDLFNBQVMsQ0FBQyxRQUFRLEVBQUUsSUFBSSxDQUFDLFVBQVUsRUFBRSxDQUFDLElBQUksQ0FBQyxDQUFDLENBQUM7UUFDbkcsU0FBUyxDQUFDLE9BQU8sQ0FBQyxRQUFRLENBQUMsRUFBRTtZQUN6QixPQUFPLENBQUMsR0FBRyxDQUFDLFFBQVEsQ0FBQyxJQUFJLENBQUMsQ0FBQztZQUMzQixJQUFHLENBQUMsSUFBSSxDQUFDLElBQUk7Z0JBQ1QsSUFBSSxDQUFDLElBQUksR0FBRyxRQUFRLENBQUMsVUFBVSxDQUFDLFlBQVksU0FBQyxjQUFJLEVBQUcsQ0FBQztZQUN6RCxJQUFJLENBQUMsT0FBTyxFQUFFLENBQUM7UUFDbkIsQ0FBQyxDQUFDLENBQUM7SUFDUCxDQUFDO0lBRUQsT0FBTztRQUNILElBQUksSUFBSSxDQUFDLElBQUksQ0FBQyxtQ0FBbUMsRUFBRTtZQUMvQyxJQUFJLENBQUMsa0JBQWtCLEdBQUcsSUFBSSxDQUFDLFlBQVksQ0FBQztZQUM1QyxNQUFNLEdBQUcsR0FBYSxlQUFLLENBQUMsR0FBRyxDQUFDLElBQUksQ0FBQyxJQUFJLENBQUMsU0FBUyxDQUFDLFFBQVEsRUFBRSxJQUFJLENBQUMsU0FBUyxDQUFDLFFBQVEsQ0FBQyxDQUFDO1lBQ3ZGLE1BQU0sYUFBYSxHQUFHLEdBQUcsQ0FBQyxVQUFVLENBQUM7WUFDckMsSUFBSSxDQUFDLElBQUksQ0FBQyxRQUFRLENBQUMsYUFBYSxFQUFFLElBQUksQ0FBQyxTQUFTLENBQUMsQ0FBQztZQUNsRCxtQkFBSyxDQUFDLE9BQU8sQ0FBQyxJQUFJLENBQUMsU0FBUyxDQUFDLFFBQVEsRUFBRSxlQUFLLENBQUMsR0FBRyxDQUFDLGFBQWEsRUFBRSxDQUFDLENBQUMsRUFBRSxtQkFBSyxDQUFDLEdBQUcsRUFBRSxDQUFDLENBQUMsQ0FBQztTQUNyRjtJQUNMLENBQUM7Q0FDSjtBQWpDRCwrQkFpQ0MifQ==","assetPath":"Assets/Multiplay/ClientScript/SoccerPlayer.ts","manifest":{"properties":[{"assembly":"mscorlib","name":"kickRadius","type":"System.Single","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"mscorlib","name":"kickPower","type":"System.Single","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"","name":"ball","type":"C:/Users/shlif/zse/ZepetoStudioExample/Templates/Assets/Multiplay/ClientScript/Ball.default","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"mscorlib","name":"kickCoolTime","type":"System.Single","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"mscorlib","name":"kickRemainCoolTime","type":"System.Single","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"SoccerPlayer","description":""},"isCompiled":true}'
+  typescriptHash: 7f0b1013ffe3775e6a3c6a9767c9831b

@@ -1,0 +1,29 @@
+fileFormatVersion: 2
+guid: 1795b7048b1a0274ca31e1b7fa0f839a
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst Game_1 = require(\"./Game\");\r\nclass
+    GoalPost extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    OnTriggerEnter(collider)
+    {\r\n        if (UnityEngine_1.LayerMask.LayerToName(collider.gameObject.layer)
+    === \"Ball\") {\r\n            console.log(\"Goal! +1\");\r\n            collider.gameObject.transform.position
+    = this.initializePos;\r\n            Game_1.default.Instance.AddGoalScore(this.isBlueTeamGoalPost);\r\n       
+    }\r\n    }\r\n}\r\nexports.default = GoalPost;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiR29hbFBvc3QuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJHb2FsUG9zdC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLDZDQUEyRDtBQUMzRCxpREFBcUQ7QUFDckQsaUNBQTBCO0FBRTFCLE1BQXFCLFFBQVMsU0FBUSxxQ0FBcUI7SUFJdkQsY0FBYyxDQUFDLFFBQW1CO1FBQzlCLElBQUcsdUJBQVMsQ0FBQyxXQUFXLENBQUMsUUFBUSxDQUFDLFVBQVUsQ0FBQyxLQUFLLENBQUMsS0FBSyxNQUFNLEVBQUM7WUFDM0QsT0FBTyxDQUFDLEdBQUcsQ0FBQyxVQUFVLENBQUMsQ0FBQztZQUN4QixRQUFRLENBQUMsVUFBVSxDQUFDLFNBQVMsQ0FBQyxRQUFRLEdBQUcsSUFBSSxDQUFDLGFBQWEsQ0FBQztZQUU1RCxjQUFJLENBQUMsUUFBUSxDQUFDLFlBQVksQ0FBQyxJQUFJLENBQUMsa0JBQWtCLENBQUMsQ0FBQztTQUN2RDtJQUNMLENBQUM7Q0FFSjtBQWJELDJCQWFDIn0=","assetPath":"Assets/Multiplay/ClientScript/GoalPost.ts","manifest":{"properties":[{"assembly":"mscorlib","name":"isBlueTeamGoalPost","type":"System.Boolean","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"UnityEngine.CoreModule","name":"initializePos","type":"UnityEngine.Vector3","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"GoalPost","description":""},"isCompiled":true}'
+  typescriptHash: 7119203d4b332051a7e3ff439cf6500d

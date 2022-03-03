@@ -1,0 +1,33 @@
+fileFormatVersion: 2
+guid: ca8cbc8afeaddaa49b664024e5e02818
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nclass
+    VectorExtention {\r\n    static Add(vectorA, vectorB) {\r\n        const diffX
+    = vectorA.x + vectorB.x;\r\n        const diffY = vectorA.y + vectorB.y;\r\n       
+    const diffZ = vectorA.z + vectorB.z;\r\n        return new UnityEngine_1.Vector3(diffX,
+    diffY, diffZ);\r\n    }\r\n    static Sub(vectorA, vectorB) {\r\n        const
+    diffX = vectorA.x - vectorB.x;\r\n        const diffY = vectorA.y - vectorB.y;\r\n       
+    const diffZ = vectorA.z - vectorB.z;\r\n        return new UnityEngine_1.Vector3(diffX,
+    diffY, diffZ);\r\n    }\r\n    static Mul(vectorA, value) {\r\n        const
+    diffX = vectorA.x * value;\r\n        const diffY = vectorA.y * value;\r\n       
+    const diffZ = vectorA.z * value;\r\n        return new UnityEngine_1.Vector3(diffX,
+    diffY, diffZ);\r\n    }\r\n}\r\nexports.default = VectorExtention;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiWk1hdGguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJaTWF0aC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLDZDQUErQztBQU0vQyxNQUFxQixlQUFlO0lBRXpCLE1BQU0sQ0FBQyxHQUFHLENBQUMsT0FBaUIsRUFBRSxPQUFpQjtRQUNsRCxNQUFNLEtBQUssR0FBRyxPQUFPLENBQUMsQ0FBQyxHQUFHLE9BQU8sQ0FBQyxDQUFDLENBQUM7UUFDcEMsTUFBTSxLQUFLLEdBQUcsT0FBTyxDQUFDLENBQUMsR0FBRyxPQUFPLENBQUMsQ0FBQyxDQUFDO1FBQ3BDLE1BQU0sS0FBSyxHQUFHLE9BQU8sQ0FBQyxDQUFDLEdBQUcsT0FBTyxDQUFDLENBQUMsQ0FBQztRQUNwQyxPQUFPLElBQUkscUJBQU8sQ0FBQyxLQUFLLEVBQUUsS0FBSyxFQUFFLEtBQUssQ0FBQyxDQUFDO0lBQzVDLENBQUM7SUFDTSxNQUFNLENBQUMsR0FBRyxDQUFDLE9BQWlCLEVBQUUsT0FBaUI7UUFDbEQsTUFBTSxLQUFLLEdBQUcsT0FBTyxDQUFDLENBQUMsR0FBRyxPQUFPLENBQUMsQ0FBQyxDQUFDO1FBQ3BDLE1BQU0sS0FBSyxHQUFHLE9BQU8sQ0FBQyxDQUFDLEdBQUcsT0FBTyxDQUFDLENBQUMsQ0FBQztRQUNwQyxNQUFNLEtBQUssR0FBRyxPQUFPLENBQUMsQ0FBQyxHQUFHLE9BQU8sQ0FBQyxDQUFDLENBQUM7UUFDcEMsT0FBTyxJQUFJLHFCQUFPLENBQUMsS0FBSyxFQUFFLEtBQUssRUFBRSxLQUFLLENBQUMsQ0FBQztJQUM1QyxDQUFDO0lBRU0sTUFBTSxDQUFDLEdBQUcsQ0FBQyxPQUFpQixFQUFFLEtBQWM7UUFDL0MsTUFBTSxLQUFLLEdBQUcsT0FBTyxDQUFDLENBQUMsR0FBRyxLQUFLLENBQUM7UUFDaEMsTUFBTSxLQUFLLEdBQUcsT0FBTyxDQUFDLENBQUMsR0FBRyxLQUFLLENBQUM7UUFDaEMsTUFBTSxLQUFLLEdBQUcsT0FBTyxDQUFDLENBQUMsR0FBRyxLQUFLLENBQUM7UUFDaEMsT0FBTyxJQUFJLHFCQUFPLENBQUMsS0FBSyxFQUFFLEtBQUssRUFBRSxLQUFLLENBQUMsQ0FBQztJQUM1QyxDQUFDO0NBR0o7QUF2QkQsa0NBdUJDIn0=","assetPath":"Assets/Multiplay/ClientScript/ZMath.ts","manifest":{"properties":[],"name":"VectorExtention","description":""},"isCompiled":true}'
+  typescriptHash: 5697183f817e9aa2e90a6ad9f76dc6ac
