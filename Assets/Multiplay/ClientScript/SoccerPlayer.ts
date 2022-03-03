@@ -14,6 +14,7 @@ export default class SoccerPlayer extends ZepetoScriptBehaviour {
     Awake(){
         this.kickCoolTime = 0.75;
         this.kickPower = 1;
+
     }
     Update() {
         if(this.kickRemainCoolTime > 0) 

@@ -29,6 +29,7 @@ export default class PlayerManager extends ZepetoScriptBehaviour {
  
 
     public get IsLocalPlayerExist(): bool {
+        
         if (this._localPlayer !== null && this._localPlayer !== undefined) return true;
         else return false;
     }
@@ -49,7 +50,7 @@ export default class PlayerManager extends ZepetoScriptBehaviour {
         return this._localCharacter;
     }
 
-
+ 
 
 
     public CreateLocalPlayer(zepetoId: string, onAddedLocalPlayer: UnityAction = null): void {
