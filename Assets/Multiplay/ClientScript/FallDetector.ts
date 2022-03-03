@@ -7,7 +7,7 @@ import { Collider, GameObject, LayerMask, Quaternion, Vector3} from 'UnityEngine
 import { ZepetoCharacter } from 'ZEPETO.Character.Controller';
 import { ZepetoScriptBehaviour } from 'ZEPETO.Script';
 import PlayerManager from './PlayerManager';
-import Ball from './Ball';
+import FootBall from './FootBall';
 
 export default class FallDetector extends ZepetoScriptBehaviour { 
     public respawnPoint_Center : GameObject;
@@ -20,7 +20,7 @@ export default class FallDetector extends ZepetoScriptBehaviour {
         }
         else if(LayerMask.LayerToName(collider.gameObject.layer) === "Ball"){ 
             collider.transform.position = this.respawnPoint_Center.transform.position;
-            let ball = collider.GetComponent<Ball>();
+            let ball = collider.GetComponent<FootBall>();
             ball.rigidBody.velocity = new Vector3(0,0,0);
             
         } 

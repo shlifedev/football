@@ -1,0 +1,32 @@
+fileFormatVersion: 2
+guid: 04124abbc908ccb49b0a486f22e6aebf
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst
+    VectorExtention_1 = require(\"./VectorExtention\");\r\nclass FootBall extends
+    ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    AddPower(dir, power) {\r\n       
+    this.rigidBody.velocity = VectorExtention_1.default.Add(this.rigidBody.velocity,
+    VectorExtention_1.default.Mul(dir, power));\r\n    }\r\n    SyncNetwork(pos,
+    velocity) {\r\n        console.log(\"sync pos : \" + pos.x + \",\" + pos.y +
+    \",\" + pos.z);\r\n        console.log(\"sync velocity : \" + velocity.x + \",\"
+    + velocity.y + \",\" + velocity.z);\r\n        this.transform.position = pos;\r\n       
+    this.rigidBody.velocity = velocity;\r\n    }\r\n}\r\nexports.default = FootBall;\r\n//#
+    sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiRm9vdEJhbGwuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJGb290QmFsbC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUNBLGlEQUFxRDtBQUNyRCx1REFBZ0Q7QUFDaEQsTUFBcUIsUUFBUyxTQUFRLHFDQUFxQjtJQUl2RCxRQUFRLENBQUMsR0FBYSxFQUFFLEtBQWM7UUFDbEMsSUFBSSxDQUFDLFNBQVMsQ0FBQyxRQUFRLEdBQUcseUJBQWUsQ0FBQyxHQUFHLENBQUMsSUFBSSxDQUFDLFNBQVMsQ0FBQyxRQUFRLEVBQUUseUJBQWUsQ0FBQyxHQUFHLENBQUMsR0FBRyxFQUFFLEtBQUssQ0FBQyxDQUFDLENBQUM7SUFDNUcsQ0FBQztJQUVNLFdBQVcsQ0FBQyxHQUFhLEVBQUUsUUFBa0I7UUFFaEQsT0FBTyxDQUFDLEdBQUcsQ0FBQyxhQUFhLEdBQUcsR0FBRyxDQUFDLENBQUMsR0FBRSxHQUFHLEdBQUcsR0FBRyxDQUFDLENBQUMsR0FBRSxHQUFHLEdBQUcsR0FBRyxDQUFDLENBQUMsQ0FBQyxDQUFDO1FBQzdELE9BQU8sQ0FBQyxHQUFHLENBQUMsa0JBQWtCLEdBQUcsUUFBUSxDQUFDLENBQUMsR0FBRSxHQUFHLEdBQUcsUUFBUSxDQUFDLENBQUMsR0FBRSxHQUFHLEdBQUcsUUFBUSxDQUFDLENBQUMsQ0FBQyxDQUFDO1FBRWpGLElBQUksQ0FBQyxTQUFTLENBQUMsUUFBUSxHQUFHLEdBQUcsQ0FBQztRQUM5QixJQUFJLENBQUMsU0FBUyxDQUFDLFFBQVEsR0FBRyxRQUFRLENBQUM7SUFDdkMsQ0FBQztDQUNKO0FBaEJELDJCQWdCQyJ9","assetPath":"Assets/Multiplay/ClientScript/FootBall.ts","manifest":{"properties":[{"assembly":"UnityEngine.PhysicsModule","name":"rigidBody","type":"UnityEngine.Rigidbody","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"FootBall","description":""},"isCompiled":true}'
+  typescriptHash: f8c4910fd1a62ea016eee8cdd2d99d54
