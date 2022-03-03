@@ -1,3 +1,3 @@
-# ZepetoFootball
- 제페토 스크립트 적응 겸 제페토 멀티플레이 월드 축구장 구현 예제 샘플 
- 유저끼리 축구공을 가지고 노는것을 목적으로 함.
+# ZepetoFootball - Client Only
+ 
+  Zepeto Football 
