@@ -1,5 +1,8 @@
 {
-    "State": {
-        
-    }
+"State" : {"players" : {"map" : "Player"},"ball" : "Ball","score_red" : "int32","score_blue" : "int32"},
+"Vector3" : {"x" : "float32","y" : "float32","z" : "float32"},
+"Transform" : {"position" : "Vector3","rotation" : "Vector3"},
+"Rigidbody" : {"velocity" : "Vector3"},
+"Player" : {"sessionId" : "string","zepetoHash" : "string","zepetoUserId" : "string","transform" : "Transform","state" : "number"},
+"Ball" : {"transform" : "Transform","rigidbody" : "Rigidbody"}
 }
