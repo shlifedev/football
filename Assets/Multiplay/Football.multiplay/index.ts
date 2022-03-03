@@ -1,5 +1,5 @@
 import { Sandbox, SandboxOptions, SandboxPlayer } from "ZEPETO.Multiplay";
-import { KickInfo, Player, Transform, Vector3 } from "ZEPETO.Multiplay.Schema";
+import { Ball, KickInfo, Player, Transform, Vector3 } from "ZEPETO.Multiplay.Schema";
 
 export default class extends Sandbox {
 
@@ -39,24 +39,25 @@ export default class extends Sandbox {
         this.onMessage("onKickBall", (client, msg) => { 
 
              
-            const kickInfo = new KickInfo(); 
+            const kickInfo = new KickInfo();  
+            kickInfo.senderSessionId=  msg.sender.senderSessionId;
 
-            const senderSessionId = msg.sender.senderSessionId;
-            
-            const lastPos = new Vector3();
-            lastPos.x = msg.position.x;
-            lastPos.y = msg.position.y;
-            lastPos.z = msg.position.z; 
-            const velocity = new Vector3();
-            lastPos.x = msg.velocity.x;
-            lastPos.y = msg.velocity.y;
-            lastPos.z = msg.velocity.z; 
+            kickInfo.lastPosition = new Vector3();
+            kickInfo.lastPosition.x = msg.position.x;
+            kickInfo.lastPosition.y = msg.position.y;
+            kickInfo.lastPosition.z = msg.position.z; 
+          
+            kickInfo.velocity = new Vector3();
+            kickInfo.velocity.x = msg.velocity.x;
+            kickInfo.velocity.y = msg.velocity.y;
+            kickInfo.velocity.z = msg.velocity.z; 
       
-            kickInfo.senderSessionId= senderSessionId;
-            kickInfo.lastPosition= lastPos;
-            kickInfo.velocity = velocity; 
+           
             
-            console.log(msg.kickInfo);
+            this.state.ball.kickInfo = kickInfo;
+            console.log(kickInfo.senderSessionId);
+            console.log(kickInfo.lastPosition);
+            console.log(kickInfo.velocity);
             console.log('onKickBall!');
         });
     }
