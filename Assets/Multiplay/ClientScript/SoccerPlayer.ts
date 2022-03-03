@@ -1,7 +1,7 @@
 import { Collider, Color, Debug, Gizmos, Physics, Time, Vector3 } from 'UnityEngine'
 import { ZepetoScriptBehaviour } from 'ZEPETO.Script'
 import Ball from './Ball';
-import ZMath from './ZMath';
+import VectorExtention from './VectorExtention';
 
 export default class SoccerPlayer extends ZepetoScriptBehaviour {
 
@@ -30,10 +30,10 @@ export default class SoccerPlayer extends ZepetoScriptBehaviour {
     Dribble() {
         if (this.ball /*&& this.kickRemainCoolTime <= 0*/) {
             this.kickRemainCoolTime = this.kickCoolTime;
-            const dir : Vector3 = ZMath.Sub(this.ball.transform.position, this.transform.position); 
+            const dir : Vector3 = VectorExtention.Sub(this.ball.transform.position, this.transform.position); 
             const normalizedDir = dir.normalized; 
             this.ball.AddPower(normalizedDir, this.kickPower);
-            Debug.DrawRay(this.transform.position, ZMath.Mul(normalizedDir, 5), Color.red, 1);
+            Debug.DrawRay(this.transform.position, VectorExtention.Mul(normalizedDir, 5), Color.red, 1);
         } 
     } 
 }
