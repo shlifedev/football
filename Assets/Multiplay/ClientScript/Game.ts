@@ -5,7 +5,7 @@
  
 import { CharacterState, SpawnInfo, ZepetoPlayers } from 'ZEPETO.Character.Controller';
 import { Room, RoomData } from 'ZEPETO.Multiplay';
-import { Player, State, Vector3 } from 'ZEPETO.Multiplay.Schema';
+import { Ball, Player, State, Vector3 } from 'ZEPETO.Multiplay.Schema';
 import { ZepetoScriptBehaviour } from 'ZEPETO.Script'
 import { ZepetoWorldMultiplay } from 'ZEPETO.World';
 import PlayerManager from './PlayerManager'
@@ -82,11 +82,7 @@ export default class Game extends ZepetoScriptBehaviour {
 
         
     }
-    private SendState(state: CharacterState) {
-        const data = new RoomData();
-        data.Add("state", state);
-        this.room.Send("onChangedState", data.GetObject());
-    }
+ 
 
 
     private OnRemovePlayer(sessionId: string, player: Player) {
@@ -110,6 +106,36 @@ export default class Game extends ZepetoScriptBehaviour {
         }
     }
 
+    public SendKickBallEvent(lastPosition : UnityEngine.Vector3, dir : UnityEngine.Vector3, power : number){
+        const data = new RoomData(); 
+       
+        const pos = new RoomData();
+        pos.Add("x", lastPosition.x);
+        pos.Add("y", lastPosition.y);
+        pos.Add("z", lastPosition.z);
+      
+        data.Add("position", pos.GetObject());
+       
+        const _dir = new RoomData();
+        _dir.Add("x", dir.x);
+        _dir.Add("y", dir.y);
+        _dir.Add("z", dir.z);
+        
+        data.Add("dir", _dir.GetObject());
+       
+       
+        const _power = new RoomData();
+        _power.Add("power", power); 
+        data.Add("power", power);
+
+        
+        this.room.Send("onKickBall", data.GetObject());
+    }
+    private SendState(state: CharacterState) {
+        const data = new RoomData();
+        data.Add("state", state);
+        this.room.Send("onChangedState", data.GetObject());
+    }
 
     private SendTransform(transform: UnityEngine.Transform) {
         const data = new RoomData();
@@ -127,9 +153,7 @@ export default class Game extends ZepetoScriptBehaviour {
         data.Add("rotation", rot.GetObject());
         this.room.Send("onChangedPlayerTransform", data.GetObject());
     }
-
-
-
+  
     private OnStateChange(state: State, isFirst: boolean) {
 
         // 첫 OnStateChange 이벤트 수신 시, State 전체 스냅샷을 수신합니다.
@@ -145,7 +169,6 @@ export default class Game extends ZepetoScriptBehaviour {
             // [RoomState] 이후 Room에서 퇴장하는 player 인스턴스 제거
             state.players.OnRemove += (player: Player, sessionId: string) => this.OnRemovePlayer(sessionId, player);
 
-
             // [CharacterController] 내 (Local)player 인스턴스 생성이 완료된 후, 초기화
             ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener(() => { 
                 console.log("OnAddedLocalPlayer!")
@@ -158,7 +181,14 @@ export default class Game extends ZepetoScriptBehaviour {
                 myPlayer.character.OnChangedState.AddListener((cur, next) => { 
                   this.SendState(next);
                 });
+
+                
+                const ball : Ball = this.room.State.ball;
+                ball.OnChange += (values) => {
+                    
+                }     
             });
+ 
 
 
 
@@ -180,6 +210,8 @@ export default class Game extends ZepetoScriptBehaviour {
                 };
             });
 
+
+     
         }
     }
 

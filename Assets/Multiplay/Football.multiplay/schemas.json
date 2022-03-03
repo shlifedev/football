@@ -4,5 +4,5 @@
 "Transform" : {"position" : "Vector3","rotation" : "Vector3"},
 "Rigidbody" : {"velocity" : "Vector3"},
 "Player" : {"sessionId" : "string","zepetoHash" : "string","zepetoUserId" : "string","transform" : "Transform","state" : "number"},
-"Ball" : {"transform" : "Transform","rigidbody" : "Rigidbody"}
+"Ball" : {"lastPosition" : "Vector3","lastDir" : "Vector3","power" : "number"}
 }

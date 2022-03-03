@@ -1,5 +1,5 @@
 import { Sandbox, SandboxOptions, SandboxPlayer } from "ZEPETO.Multiplay";
-import { Player, Transform, Vector3 } from "ZEPETO.Multiplay.Schema";
+import { Ball, Player, Transform, Vector3 } from "ZEPETO.Multiplay.Schema";
 
 export default class extends Sandbox {
 
@@ -36,9 +36,16 @@ export default class extends Sandbox {
  
 
 
-        this.onMessage("onBallUpdate", (client, msg) => {
-            //const lastPosition : Vector3 = msg.position;
-           // const lastVelocity : Vector3 = msg.velocity; 
+        this.onMessage("onKickBall", (client, msg) => {
+            const lastPosition : Vector3 = msg.position;
+            const lastDir : Vector3 = msg.velocity; 
+            const power : number = msg.power; 
+
+            this.state.ball.lastPosition = lastPosition;
+            this.state.ball.lastDir = lastDir;
+            this.state.ball.power = power; 
+            
+            console.log('onKickBall!');
         });
     }
 

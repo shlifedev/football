@@ -29,7 +29,8 @@ declare module "ZEPETO.Multiplay.Schema" {
 		state: number;
 	}
 	class Ball extends Schema {
-		transform: Transform;
-		rigidbody: Rigidbody;
+		lastPosition: Vector3;
+		lastDir: Vector3;
+		power: number;
 	}
 }
