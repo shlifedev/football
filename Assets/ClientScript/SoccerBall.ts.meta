@@ -19,15 +19,14 @@ ScriptedImporter:
   WrapperFilters: []
   wrapperOutputDirectory: Generated
   compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
-    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
-    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst VectorExtention_1 = require(\"./VectorExtention\");\r\nclass
-    FootBall extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    AddPower(dir,
-    power) {\r\n        this.rigidBody.velocity = VectorExtention_1.default.Add(this.rigidBody.velocity,
+    { value: true });\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst
+    VectorExtention_1 = require(\"./VectorExtention\");\r\nclass SoccerBall extends
+    ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    AddPower(dir, power) {\r\n       
+    this.rigidBody.velocity = VectorExtention_1.default.Add(this.rigidBody.velocity,
     VectorExtention_1.default.Mul(dir, power));\r\n    }\r\n    SyncNetwork(pos,
     velocity) {\r\n        //console.log(\"sync pos : \" + pos.x +\",\" + pos.y +\",\"
     + pos.z);\r\n        //console.log(\"sync velocity : \" + velocity.x +\",\" +
     velocity.y +\",\" + velocity.z);=\r\n        this.rigidBody.MovePosition(pos);\r\n       
-    this.rigidBody.velocity = velocity;\r\n    }\r\n    Awake() {\r\n        this.SyncNetwork(this.transform.position,
-    new UnityEngine_1.Vector3(10, 0, 0));\r\n    }\r\n}\r\nexports.default = FootBall;\r\n//#
-    sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiU29jY2VyQmFsbC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIlNvY2NlckJhbGwudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSw2Q0FBZ0Q7QUFDaEQsaURBQXFEO0FBQ3JELHVEQUFnRDtBQUNoRCxNQUFxQixRQUFTLFNBQVEscUNBQXFCO0lBR3ZELFFBQVEsQ0FBQyxHQUFhLEVBQUUsS0FBYztRQUNsQyxJQUFJLENBQUMsU0FBUyxDQUFDLFFBQVEsR0FBRyx5QkFBZSxDQUFDLEdBQUcsQ0FBQyxJQUFJLENBQUMsU0FBUyxDQUFDLFFBQVEsRUFBRSx5QkFBZSxDQUFDLEdBQUcsQ0FBQyxHQUFHLEVBQUUsS0FBSyxDQUFDLENBQUMsQ0FBQztJQUM1RyxDQUFDO0lBRU0sV0FBVyxDQUFDLEdBQWEsRUFBRSxRQUFrQjtRQUNoRCwrREFBK0Q7UUFDL0Qsb0ZBQW9GO1FBQ3BGLElBQUksQ0FBQyxTQUFTLENBQUMsWUFBWSxDQUFDLEdBQUcsQ0FBQyxDQUFDO1FBQ2pDLElBQUksQ0FBQyxTQUFTLENBQUMsUUFBUSxHQUFHLFFBQVEsQ0FBQztJQUN2QyxDQUFDO0lBRUQsS0FBSztRQUNHLElBQUksQ0FBQyxXQUFXLENBQUMsSUFBSSxDQUFDLFNBQVMsQ0FBQyxRQUFRLEVBQUUsSUFBSSxxQkFBTyxDQUFDLEVBQUUsRUFBQyxDQUFDLEVBQUUsQ0FBQyxDQUFDLENBQUMsQ0FBQztJQUN4RSxDQUFDO0NBQ0o7QUFqQkQsMkJBaUJDIn0=","assetPath":"Assets/ClientScript/SoccerBall.ts","manifest":{"properties":[{"assembly":"UnityEngine.PhysicsModule","name":"rigidBody","type":"UnityEngine.Rigidbody","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"FootBall","description":""},"isCompiled":true}'
-  typescriptHash: fa63adcf25b59c50c022f178585e0603
+    this.rigidBody.velocity = velocity;\r\n    }\r\n}\r\nexports.default = SoccerBall;\r\n//#
+    sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiU29jY2VyQmFsbC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIlNvY2NlckJhbGwudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFDQSxpREFBcUQ7QUFDckQsdURBQWdEO0FBQ2hELE1BQXFCLFVBQVcsU0FBUSxxQ0FBcUI7SUFHekQsUUFBUSxDQUFDLEdBQWEsRUFBRSxLQUFjO1FBQ2xDLElBQUksQ0FBQyxTQUFTLENBQUMsUUFBUSxHQUFHLHlCQUFlLENBQUMsR0FBRyxDQUFDLElBQUksQ0FBQyxTQUFTLENBQUMsUUFBUSxFQUFFLHlCQUFlLENBQUMsR0FBRyxDQUFDLEdBQUcsRUFBRSxLQUFLLENBQUMsQ0FBQyxDQUFDO0lBQzVHLENBQUM7SUFFTSxXQUFXLENBQUMsR0FBYSxFQUFFLFFBQWtCO1FBQ2hELCtEQUErRDtRQUMvRCxvRkFBb0Y7UUFDcEYsSUFBSSxDQUFDLFNBQVMsQ0FBQyxZQUFZLENBQUMsR0FBRyxDQUFDLENBQUM7UUFDakMsSUFBSSxDQUFDLFNBQVMsQ0FBQyxRQUFRLEdBQUcsUUFBUSxDQUFDO0lBQ3ZDLENBQUM7Q0FDSjtBQWJELDZCQWFDIn0=","assetPath":"Assets/ClientScript/SoccerBall.ts","manifest":{"properties":[{"assembly":"UnityEngine.PhysicsModule","name":"rigidBody","type":"UnityEngine.Rigidbody","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"SoccerBall","description":""},"isCompiled":true}'
+  typescriptHash: 5aec63c4d23dca05d9c88867684018ce
