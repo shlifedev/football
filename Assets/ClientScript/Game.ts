@@ -11,12 +11,12 @@ import { ZepetoWorldMultiplay } from 'ZEPETO.World';
 import PlayerManager from './PlayerManager'
 import SoccerPlayer from './SoccerPlayer';
 import * as UnityEngine from "UnityEngine";
-import FootBall from './FootBall';
+import SoccerBall from './SoccerBall';
 
 
 export default class Game extends ZepetoScriptBehaviour {
 
-    public footBall : FootBall;
+    public soccerBall : SoccerBall;
     public multiplay: ZepetoWorldMultiplay;
     private room: Room;
 
@@ -173,14 +173,20 @@ export default class Game extends ZepetoScriptBehaviour {
             // [RoomState] 이후 Room에서 퇴장하는 player 인스턴스 제거
             state.players.OnRemove += (player: Player, sessionId: string) => this.OnRemovePlayer(sessionId, player);
 
+
+            // 첫 접속시 공 위치 동기화를 위해 호출
+            const ball: Ball = this.room.State.ball;
+            this.soccerBall.SyncNetwork(this.ParseVector3(ball.kickInfo.lastPosition), this.ParseVector3(ball.kickInfo.velocity));    
+           
+           
+           
             // [CharacterController] 내 (Local)player 인스턴스 생성이 완료된 후, 초기화
             ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener(() => {
                 console.log("OnAddedLocalPlayer!")
                 const myPlayer = ZepetoPlayers.instance.LocalPlayer.zepetoPlayer;
                 var characterGo = myPlayer.character.gameObject;
                 characterGo.layer = UnityEngine.LayerMask.NameToLayer("Character");
-                let soccerPlayer = characterGo.AddComponent<SoccerPlayer>();
-                soccerPlayer.kickRadius = 1;
+                let soccerPlayer = characterGo.AddComponent<SoccerPlayer>(); 
 
                 myPlayer.character.OnChangedState.AddListener((cur, next) => {
                     this.SendState(next);
@@ -189,8 +195,9 @@ export default class Game extends ZepetoScriptBehaviour {
 
                 const ball: Ball = this.room.State.ball;
                 ball.OnChange += (values) => { 
-                    this.footBall.SyncNetwork(this.ParseVector3(ball.kickInfo.lastPosition), this.ParseVector3(ball.kickInfo.velocity));
-                 
+                    // 다른 사람이 공을 찬 경우에만 
+                    if(ball.kickInfo.senderSessionId !== this.room.SessionId)
+                       this.soccerBall.SyncNetwork(this.ParseVector3(ball.kickInfo.lastPosition), this.ParseVector3(ball.kickInfo.velocity));    
                 }
             });
 
@@ -223,7 +230,7 @@ export default class Game extends ZepetoScriptBehaviour {
 
     Start() {
 
-        this.footBall = UnityEngine.GameObject.FindObjectOfType<FootBall>();
+        this.soccerBall = UnityEngine.GameObject.FindObjectOfType<SoccerBall>();
         this.multiplay.RoomCreated += (room: Room) => {
             console.log("room created!");
             this.room = room;

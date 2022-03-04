@@ -48,23 +48,17 @@ export default class PlayerManager extends ZepetoScriptBehaviour {
             throw new UnityException("Local Character 생성되어있지 않습니다. PlayerManager.Instance.CreateLocalPlayer() 실행했습니까?")
 
         return this._localCharacter;
-    }
-
- 
-
+    } 
 
     public CreateLocalPlayer(zepetoId: string, onAddedLocalPlayer: UnityAction = null): void {
         ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener(() => {
-            this._localPlayer = ZepetoPlayers.instance.LocalPlayer;
-            this._localCharacter = this._localPlayer.zepetoPlayer.character;
-
+            this._localPlayer    = ZepetoPlayers.instance.LocalPlayer;
+            this._localCharacter = this._localPlayer.zepetoPlayer.character; 
             if (onAddedLocalPlayer !== null || onAddedLocalPlayer !== undefined) {
                 onAddedLocalPlayer();
             }
-        });
-
-        ZepetoPlayers.instance.CreatePlayerWithZepetoId("", zepetoId, new SpawnInfo(), true);
-
+        }); 
+        ZepetoPlayers.instance.CreatePlayerWithZepetoId("", zepetoId, new SpawnInfo(), true); 
     }
 
 

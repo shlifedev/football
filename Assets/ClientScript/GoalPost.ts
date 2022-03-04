@@ -7,10 +7,8 @@ export default class GoalPost extends ZepetoScriptBehaviour {
     public isBlueTeamGoalPost : boolean;
     public initializePos : Vector3;
     OnTriggerEnter(collider : Collider){
-        if(LayerMask.LayerToName(collider.gameObject.layer) === "Ball"){
-            console.log("Goal! +1");
-            collider.gameObject.transform.position = this.initializePos;
-            
+        if(LayerMask.LayerToName(collider.gameObject.layer) === "Ball"){ 
+            collider.gameObject.transform.position = this.initializePos; 
             Game.Instance.AddGoalScore(this.isBlueTeamGoalPost);
         } 
     }
