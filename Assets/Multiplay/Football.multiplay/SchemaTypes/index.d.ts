@@ -18,7 +18,9 @@ declare module "ZEPETO.Multiplay.Schema" {
 		position: Vector3;
 		rotation: Vector3;
 	}
-	class Rigidbody extends Schema {
+	class KickInfo extends Schema {
+		senderSessionId: string;
+		lastPosition: Vector3;
 		velocity: Vector3;
 	}
 	class Player extends Schema {
@@ -29,7 +31,6 @@ declare module "ZEPETO.Multiplay.Schema" {
 		state: number;
 	}
 	class Ball extends Schema {
-		transform: Transform;
-		rigidbody: Rigidbody;
+		kickInfo: KickInfo;
 	}
 }

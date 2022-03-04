@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 41769139, guid: 736b963f5c0b1409797512234358a345, type: 3}
+  m_Name: Setting
+  m_EditorClassIdentifier: 
+  zepetoApiHost: https://gw-napi.zepeto.io
+  multiplayHost: 127.0.0.1
+  multiplayPort: 4167
+  isSecure: 0
+  gameSystemHost: api.gamesystem.zepeto.run
+  zepetoStudioHost: https://api-studio.zepeto.me
+  worldCreatorHost: https://api-world-creator.zepeto.me
