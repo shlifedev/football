@@ -1,5 +1,5 @@
 import { Sandbox, SandboxOptions, SandboxPlayer } from "ZEPETO.Multiplay";
-import { Ball, KickInfo, Player, Transform, Vector3 } from "ZEPETO.Multiplay.Schema";
+import { KickInfo, Player, Transform, Vector3 } from "ZEPETO.Multiplay.Schema";
 
 export default class extends Sandbox {
 

@@ -32,11 +32,12 @@ export default class SoccerPlayer extends ZepetoScriptBehaviour {
     Dribble() {
         if (this.ball && this.kickRemainCoolTime <= 0) {
             this.kickPower = Random.Range(7.0, 10.0);
-            this.kickRemainCoolTime = this.kickCoolTime;
+            this.kickRemainCoolTime = this.kickCoolTime; 
+            this.ball.rigidBody.velocity = Vector3.zero; 
             const dir: Vector3 = VectorExtention.Sub(this.ball.transform.position, this.transform.position);
             const normalizedDir = dir.normalized;  
-            this.ball.AddPower(normalizedDir, this.kickPower); 
-            Game.Instance.SendKickBallEvent(this.ball.transform.position, this.ball.rigidBody.velocity);
+          //  this.ball.AddPower(normalizedDir, this.kickPower); 
+            Game.Instance.SendKickBallEvent(this.ball.transform.position, VectorExtention.Mul(normalizedDir, this.kickPower));
             Debug.DrawRay(this.transform.position, VectorExtention.Mul(normalizedDir, 5), Color.red, 1); 
         }
     }

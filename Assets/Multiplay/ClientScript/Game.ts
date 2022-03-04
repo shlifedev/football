@@ -189,13 +189,8 @@ export default class Game extends ZepetoScriptBehaviour {
 
                 const ball: Ball = this.room.State.ball;
                 ball.OnChange += (values) => { 
-                    if(ball.kickInfo.senderSessionId === this.room.SessionId){
-                        console.log("ignore");
-                    }
-                    else{
-                        console.log("sync"); 
-                        this.footBall.SyncNetwork(this.ParseVector3(ball.kickInfo.lastPosition), this.ParseVector3(ball.kickInfo.velocity));
-                    } 
+                    this.footBall.SyncNetwork(this.ParseVector3(ball.kickInfo.lastPosition), this.ParseVector3(ball.kickInfo.velocity));
+                 
                 }
             });
 
