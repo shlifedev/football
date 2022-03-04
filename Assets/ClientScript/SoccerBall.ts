@@ -1,7 +1,7 @@
 import { Rigidbody, Vector3 } from 'UnityEngine'
 import { ZepetoScriptBehaviour } from 'ZEPETO.Script'
 import VectorExtention from './VectorExtention';
-export default class FootBall extends ZepetoScriptBehaviour {
+export default class SoccerBall extends ZepetoScriptBehaviour {
 
     public rigidBody : Rigidbody; 
     AddPower(dir : Vector3, power : number){
@@ -13,9 +13,5 @@ export default class FootBall extends ZepetoScriptBehaviour {
         //console.log("sync velocity : " + velocity.x +"," + velocity.y +"," + velocity.z);=
         this.rigidBody.MovePosition(pos);
         this.rigidBody.velocity = velocity; 
-    }
- 
-    Awake(){ 
-            this.SyncNetwork(this.transform.position, new Vector3(10,0, 0));
-    }
+    } 
 }
