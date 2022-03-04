@@ -13,7 +13,7 @@ export default class SoccerPlayer extends ZepetoScriptBehaviour {
     public kickCoolTime: number;
     public kickRemainCoolTime: number;
     Awake() {
-        this.kickCoolTime = 0.1;
+        this.kickCoolTime = 0.5;
         this.kickRemainCoolTime = -1;
         this.kickRadius = 0.5;
 
@@ -36,8 +36,8 @@ export default class SoccerPlayer extends ZepetoScriptBehaviour {
             this.ball.rigidBody.velocity = Vector3.zero; 
             const dir: Vector3 = VectorExtention.Sub(this.ball.transform.position, this.transform.position);
             const normalizedDir = dir.normalized;  
-          //  this.ball.AddPower(normalizedDir, this.kickPower); 
-            Game.Instance.SendKickBallEvent(this.ball.transform.position, VectorExtention.Mul(normalizedDir, this.kickPower));
+            this.ball.AddPower(normalizedDir, this.kickPower); 
+            Game.Instance.SendKickBallEvent(this.ball.transform.position, this.ball.rigidBody.velocity);
             Debug.DrawRay(this.transform.position, VectorExtention.Mul(normalizedDir, 5), Color.red, 1); 
         }
     }
