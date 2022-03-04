@@ -5,8 +5,7 @@
 
 import { Collider, GameObject, LayerMask, Quaternion, Vector3} from 'UnityEngine';
 import { ZepetoCharacter } from 'ZEPETO.Character.Controller';
-import { ZepetoScriptBehaviour } from 'ZEPETO.Script';
-import PlayerManager from './PlayerManager';
+import { ZepetoScriptBehaviour } from 'ZEPETO.Script'; 
 import FootBall from './FootBall';
 
 export default class FallDetector extends ZepetoScriptBehaviour { 

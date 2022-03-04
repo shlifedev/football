@@ -1,4 +1,4 @@
-import { Rigidbody, Time, Vector3 } from 'UnityEngine'
+import { Rigidbody, Vector3 } from 'UnityEngine'
 import { ZepetoScriptBehaviour } from 'ZEPETO.Script'
 import VectorExtention from './VectorExtention';
 export default class FootBall extends ZepetoScriptBehaviour {

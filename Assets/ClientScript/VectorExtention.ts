@@ -1,8 +1,4 @@
-import { Collider, Vector3 } from 'UnityEngine'
-import { ZepetoCharacter } from 'ZEPETO.Character.Controller'
-import { ZepetoScriptBehaviour } from 'ZEPETO.Script'
-
-
+import { Vector3 } from 'UnityEngine'
 
 export default class VectorExtention{
 
