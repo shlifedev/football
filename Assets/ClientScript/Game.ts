@@ -271,13 +271,11 @@ export default class Game extends ZepetoScriptBehaviour {
        
        
          /* 콜백 및 메세지 등록 */
-        this.multiplay.RoomCreated += (room: Room) => {
-            console.log("room created!");
+        this.multiplay.RoomCreated += (room: Room) => { 
             this.room = room;
         };
 
-        this.multiplay.RoomJoined += (room: Room) => {
-            console.log("room joined!");
+        this.multiplay.RoomJoined += (room: Room) => { 
             room.OnStateChange += this.OnStateChange;
         };
 
@@ -285,3 +283,6 @@ export default class Game extends ZepetoScriptBehaviour {
     }
 
 }
+
+
+
