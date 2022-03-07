@@ -71,7 +71,7 @@ export default class extends Sandbox {
         if (client.hashCode)
             player.zepetoHash = client.hashCode;
         if (client.userId)
-            player.zepetoHash = client.userId;
+            player.zepetoUserId = client.userId;
 
 
         console.log(`[OnJoin] ${client.sessionId}'s`)

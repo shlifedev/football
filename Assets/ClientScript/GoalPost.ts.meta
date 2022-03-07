@@ -18,12 +18,14 @@ ScriptedImporter:
   wrapperTypes: []
   WrapperFilters: []
   wrapperOutputDirectory: Generated
-  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
-    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
-    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst Game_1 = require(\"./Game\");\r\nclass
-    GoalPost extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    OnTriggerEnter(collider)
-    {\r\n        if (UnityEngine_1.LayerMask.LayerToName(collider.gameObject.layer)
-    === \"Ball\") {\r\n            collider.gameObject.transform.position = this.initializePos;\r\n           
-    Game_1.default.Instance.AddGoalScore(this.isBlueTeamGoalPost);\r\n        }\r\n   
-    }\r\n}\r\nexports.default = GoalPost;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiR29hbFBvc3QuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJHb2FsUG9zdC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLDZDQUEyRDtBQUMzRCxpREFBcUQ7QUFDckQsaUNBQTBCO0FBRTFCLE1BQXFCLFFBQVMsU0FBUSxxQ0FBcUI7SUFJdkQsY0FBYyxDQUFDLFFBQW1CO1FBQzlCLElBQUcsdUJBQVMsQ0FBQyxXQUFXLENBQUMsUUFBUSxDQUFDLFVBQVUsQ0FBQyxLQUFLLENBQUMsS0FBSyxNQUFNLEVBQUM7WUFDM0QsUUFBUSxDQUFDLFVBQVUsQ0FBQyxTQUFTLENBQUMsUUFBUSxHQUFHLElBQUksQ0FBQyxhQUFhLENBQUM7WUFDNUQsY0FBSSxDQUFDLFFBQVEsQ0FBQyxZQUFZLENBQUMsSUFBSSxDQUFDLGtCQUFrQixDQUFDLENBQUM7U0FDdkQ7SUFDTCxDQUFDO0NBRUo7QUFYRCwyQkFXQyJ9","assetPath":"Assets/ClientScript/GoalPost.ts","manifest":{"properties":[{"assembly":"mscorlib","name":"isBlueTeamGoalPost","type":"System.Boolean","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"UnityEngine.CoreModule","name":"initializePos","type":"UnityEngine.Vector3","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"GoalPost","description":""},"isCompiled":true}'
-  typescriptHash: cf54dab8ecf5fe0f1e1ab8498225d15c
+  compiledResult: "{\"source\":\"\\\"use strict\\\";\\r\\nObject.defineProperty(exports,
+    \\\"__esModule\\\", { value: true });\\r\\nconst UnityEngine_1 = require(\\\"UnityEngine\\\");\\r\\nconst
+    ZEPETO_Script_1 = require(\\\"ZEPETO.Script\\\");\\r\\nconst Game_1 = require(\\\"./Game\\\");\\r\\nclass
+    GoalPost extends ZEPETO_Script_1.ZepetoScriptBehaviour {\\r\\n    /**\\r\\n    
+    * \uACF5\uC774 \uACE8\uB300\uC5D0 \uB4E4\uC5B4\uC628 \uACBD\uC6B0\uB97C \uAC10\uC9C0\uD558\uC5EC
+    \uC774\uBCA4\uD2B8 \uCC98\uB9AC\\r\\n     */\\r\\n    OnTriggerEnter(collider)
+    {\\r\\n        if (UnityEngine_1.LayerMask.LayerToName(collider.gameObject.layer)
+    === \\\"Ball\\\") {\\r\\n            collider.gameObject.transform.position =
+    this.initializePos;\\r\\n            Game_1.default.Instance.AddGoalScore(this.isBlueTeamGoalPost);\\r\\n       
+    }\\r\\n    }\\r\\n}\\r\\nexports.default = GoalPost;\\r\\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiR29hbFBvc3QuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJHb2FsUG9zdC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLDZDQUEyRDtBQUMzRCxpREFBcUQ7QUFDckQsaUNBQTBCO0FBRTFCLE1BQXFCLFFBQVMsU0FBUSxxQ0FBcUI7SUFXdkQ7O09BRUc7SUFDSCxjQUFjLENBQUMsUUFBbUI7UUFDOUIsSUFBRyx1QkFBUyxDQUFDLFdBQVcsQ0FBQyxRQUFRLENBQUMsVUFBVSxDQUFDLEtBQUssQ0FBQyxLQUFLLE1BQU0sRUFBQztZQUMzRCxRQUFRLENBQUMsVUFBVSxDQUFDLFNBQVMsQ0FBQyxRQUFRLEdBQUcsSUFBSSxDQUFDLGFBQWEsQ0FBQztZQUM1RCxjQUFJLENBQUMsUUFBUSxDQUFDLFlBQVksQ0FBQyxJQUFJLENBQUMsa0JBQWtCLENBQUMsQ0FBQztTQUN2RDtJQUNMLENBQUM7Q0FFSjtBQXJCRCwyQkFxQkMifQ==\",\"assetPath\":\"Assets/ClientScript/GoalPost.ts\",\"manifest\":{\"properties\":[{\"assembly\":\"mscorlib\",\"name\":\"isBlueTeamGoalPost\",\"type\":\"System.Boolean\",\"isArray\":false,\"enumKeys\":[],\"enumValues\":[],\"attributes\":[]},{\"assembly\":\"UnityEngine.CoreModule\",\"name\":\"initializePos\",\"type\":\"UnityEngine.Vector3\",\"isArray\":false,\"enumKeys\":[],\"enumValues\":[],\"attributes\":[]}],\"name\":\"GoalPost\",\"description\":\"\"},\"isCompiled\":true}"
+  typescriptHash: fd1e893ef545dd7fbcb3574287f45cc4
