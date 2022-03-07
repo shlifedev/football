@@ -8,6 +8,10 @@ import { ZepetoCharacter } from 'ZEPETO.Character.Controller';
 import { ZepetoScriptBehaviour } from 'ZEPETO.Script'; 
 import SoccerBall from './SoccerBall';
 
+
+/**
+ * 플레이어나 공이 해당 컴포넌트에 부딪히면 이벤트 수신후 위치 재설정
+ */
 export default class FallDetector extends ZepetoScriptBehaviour { 
     public respawnPoint_Center : GameObject;
     OnTriggerStay(collider : Collider){

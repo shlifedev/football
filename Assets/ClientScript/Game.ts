@@ -7,8 +7,7 @@ import { CharacterState, SpawnInfo, ZepetoPlayers } from 'ZEPETO.Character.Contr
 import { Room, RoomData } from 'ZEPETO.Multiplay';
 import { Ball, Player, State, Vector3 } from 'ZEPETO.Multiplay.Schema';
 import { ZepetoScriptBehaviour } from 'ZEPETO.Script'
-import { ZepetoWorldMultiplay } from 'ZEPETO.World';
-import PlayerManager from './PlayerManager'
+import { ZepetoWorldMultiplay } from 'ZEPETO.World'; 
 import SoccerPlayer from './SoccerPlayer';
 import * as UnityEngine from "UnityEngine";
 import SoccerBall from './SoccerBall';
@@ -20,17 +19,25 @@ export default class Game extends ZepetoScriptBehaviour {
     public multiplay: ZepetoWorldMultiplay;
     private room: Room;
 
-    public blueTeamScore: int;
-    public redTeamScore: int;
 
+
+    /**
+     * 스코어, 및 텍스트 표시
+     */
+    public blueTeamScore: int;
+    public redTeamScore: int; 
     public blueTeamScoreTextMesh: UnityEngine.TextMesh;
     public redTeamScoreTextMesh: UnityEngine.TextMesh;
+
 
 
     private static _instance: Game = null;
 
 
 
+    /**
+     * 싱글톤
+     */
     public static get Instance(): Game {
         if (this._instance == null) {
             this._instance = UnityEngine.GameObject.FindObjectOfType<Game>();
@@ -42,6 +49,10 @@ export default class Game extends ZepetoScriptBehaviour {
 
 
 
+
+    /**
+     * 점수 획득 처리 
+     */
     public AddGoalScore(blueTeam: boolean) { 
         if (blueTeam) this.blueTeamScore += 1;
         else this.redTeamScore += 1;
@@ -53,6 +64,10 @@ export default class Game extends ZepetoScriptBehaviour {
     }
 
 
+
+    /**
+     * 스키마 Vector3을 유니티 Vector3으로 변환
+     */
     private ParseVector3(vector3: Vector3): UnityEngine.Vector3 {
         return new UnityEngine.Vector3
             (
@@ -62,9 +77,9 @@ export default class Game extends ZepetoScriptBehaviour {
             );
     }
 
-/**
- * 플레이어 입장콜백 
- */
+    /**
+     * 플레이어 입장콜백 
+     */
     private OnJoinPlayer(sessionId: string, player: Player) {
         console.log(`[OnJoinPlayer] players - sessionId : ${sessionId}`);
 
@@ -90,6 +105,11 @@ export default class Game extends ZepetoScriptBehaviour {
     }
 
 
+
+
+    /**
+     * tick마다 플레이어 위치를 동기화시키기 위한 코드
+     */
     private * SendMessageLoop(tick: number) {
         while (true) {
             yield new UnityEngine.WaitForSeconds(tick);
@@ -105,39 +125,54 @@ export default class Game extends ZepetoScriptBehaviour {
         }
     }
 
+
+
+    /**
+     * 공의 위치/속도 동기화
+     */
     public SendKickBallEvent(lastPosition: UnityEngine.Vector3, velocity: UnityEngine.Vector3) {
         const data = new RoomData();
-        console.log("send lastPosition: " + lastPosition.x + "," + lastPosition.y + "," + lastPosition.z);
-        console.log("send velocity: " + velocity.x + "," + velocity.y + "," + velocity.z);
-
         const _senderSessionId = new RoomData();
-        _senderSessionId.Add("senderSessionId", this.room.SessionId);
-        data.Add("sender", _senderSessionId.GetObject());
+        _senderSessionId.Add("senderSessionId", this.room.SessionId); 
+        data.Add("sender",_senderSessionId.GetObject());
 
 
-
+        // 위치정보 추가
         const pos = new RoomData();
         pos.Add("x", lastPosition.x);
         pos.Add("y", lastPosition.y);
-        pos.Add("z", lastPosition.z);
-
+        pos.Add("z", lastPosition.z); 
         data.Add("position", pos.GetObject());
 
+
+        // 속도정보 추가
         const _velocity = new RoomData();
         _velocity.Add("x", velocity.x);
         _velocity.Add("y", velocity.y);
-        _velocity.Add("z", velocity.z);
-
+        _velocity.Add("z", velocity.z); 
         data.Add("velocity", _velocity.GetObject());
 
         this.room.Send("onKickBall", data.GetObject());
     }
+
+
+    
+    /**
+     * 캐릭터의 Character Controller  상태 동기화 
+     */
     private SendState(state: CharacterState) {
         const data = new RoomData();
         data.Add("state", state);
         this.room.Send("onChangedState", data.GetObject());
     }
 
+
+ 
+    
+    /**
+     * 캐릭터 위치 동기화
+     * @param transform 
+     */
     private SendTransform(transform: UnityEngine.Transform) {
         const data = new RoomData();
 
@@ -156,6 +191,11 @@ export default class Game extends ZepetoScriptBehaviour {
     }
 
 
+
+    
+    /**
+     * State 변경시 콜백 수신
+     */
     private OnStateChange(state: State, isFirst: boolean) {
 
         // 첫 OnStateChange 이벤트 수신 시, State 전체 스냅샷을 수신합니다.
@@ -168,7 +208,7 @@ export default class Game extends ZepetoScriptBehaviour {
 
             // 첫 접속시 공 위치 동기화를 위해 호출
             const ball: Ball = this.room.State.ball;
-            this.soccerBall.SyncNetwork(this.ParseVector3(ball.kickInfo.lastPosition), this.ParseVector3(ball.kickInfo.velocity));
+            this.soccerBall.SyncPosition(this.ParseVector3(ball.kickInfo.lastPosition), this.ParseVector3(ball.kickInfo.velocity));
 
 
 
@@ -192,9 +232,9 @@ export default class Game extends ZepetoScriptBehaviour {
 
                 const ball: Ball = this.room.State.ball;
                 ball.OnChange += (values) => {
-                    // 다른 사람이 공을 찬 경우에만 SyncNetwork 함수를 호출한다. (본인이 찬 공은 네트워크 동기화 X)
+                    // 다른 사람이 공을 찬 경우에만 SyncPosition 함수를 호출한다. (본인이 찬 공은 네트워크 동기화 X)
                     if (ball.kickInfo.senderSessionId !== this.room.SessionId)
-                        this.soccerBall.SyncNetwork(this.ParseVector3(ball.kickInfo.lastPosition), this.ParseVector3(ball.kickInfo.velocity));
+                        this.soccerBall.SyncPosition(this.ParseVector3(ball.kickInfo.lastPosition), this.ParseVector3(ball.kickInfo.velocity));
                 }
             });
 
@@ -226,7 +266,11 @@ export default class Game extends ZepetoScriptBehaviour {
 
     Start() {
 
+        /* SoccerBall 인스턴스 캐싱 */
         this.soccerBall = UnityEngine.GameObject.FindObjectOfType<SoccerBall>();
+       
+       
+         /* 콜백 및 메세지 등록 */
         this.multiplay.RoomCreated += (room: Room) => {
             console.log("room created!");
             this.room = room;

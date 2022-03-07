@@ -18,16 +18,21 @@ ScriptedImporter:
   wrapperTypes: []
   WrapperFilters: []
   wrapperOutputDirectory: Generated
-  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
-    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nclass
-    VectorExtention {\r\n    static Add(vectorA, vectorB) {\r\n        const diffX
-    = vectorA.x + vectorB.x;\r\n        const diffY = vectorA.y + vectorB.y;\r\n       
-    const diffZ = vectorA.z + vectorB.z;\r\n        return new UnityEngine_1.Vector3(diffX,
-    diffY, diffZ);\r\n    }\r\n    static Sub(vectorA, vectorB) {\r\n        const
-    diffX = vectorA.x - vectorB.x;\r\n        const diffY = vectorA.y - vectorB.y;\r\n       
-    const diffZ = vectorA.z - vectorB.z;\r\n        return new UnityEngine_1.Vector3(diffX,
-    diffY, diffZ);\r\n    }\r\n    static Mul(vectorA, value) {\r\n        const
-    diffX = vectorA.x * value;\r\n        const diffY = vectorA.y * value;\r\n       
-    const diffZ = vectorA.z * value;\r\n        return new UnityEngine_1.Vector3(diffX,
-    diffY, diffZ);\r\n    }\r\n}\r\nexports.default = VectorExtention;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVmVjdG9yRXh0ZW50aW9uLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiVmVjdG9yRXh0ZW50aW9uLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsNkNBQXFDO0FBRXJDLE1BQXFCLGVBQWU7SUFFekIsTUFBTSxDQUFDLEdBQUcsQ0FBQyxPQUFpQixFQUFFLE9BQWlCO1FBQ2xELE1BQU0sS0FBSyxHQUFHLE9BQU8sQ0FBQyxDQUFDLEdBQUcsT0FBTyxDQUFDLENBQUMsQ0FBQztRQUNwQyxNQUFNLEtBQUssR0FBRyxPQUFPLENBQUMsQ0FBQyxHQUFHLE9BQU8sQ0FBQyxDQUFDLENBQUM7UUFDcEMsTUFBTSxLQUFLLEdBQUcsT0FBTyxDQUFDLENBQUMsR0FBRyxPQUFPLENBQUMsQ0FBQyxDQUFDO1FBQ3BDLE9BQU8sSUFBSSxxQkFBTyxDQUFDLEtBQUssRUFBRSxLQUFLLEVBQUUsS0FBSyxDQUFDLENBQUM7SUFDNUMsQ0FBQztJQUNNLE1BQU0sQ0FBQyxHQUFHLENBQUMsT0FBaUIsRUFBRSxPQUFpQjtRQUNsRCxNQUFNLEtBQUssR0FBRyxPQUFPLENBQUMsQ0FBQyxHQUFHLE9BQU8sQ0FBQyxDQUFDLENBQUM7UUFDcEMsTUFBTSxLQUFLLEdBQUcsT0FBTyxDQUFDLENBQUMsR0FBRyxPQUFPLENBQUMsQ0FBQyxDQUFDO1FBQ3BDLE1BQU0sS0FBSyxHQUFHLE9BQU8sQ0FBQyxDQUFDLEdBQUcsT0FBTyxDQUFDLENBQUMsQ0FBQztRQUNwQyxPQUFPLElBQUkscUJBQU8sQ0FBQyxLQUFLLEVBQUUsS0FBSyxFQUFFLEtBQUssQ0FBQyxDQUFDO0lBQzVDLENBQUM7SUFFTSxNQUFNLENBQUMsR0FBRyxDQUFDLE9BQWlCLEVBQUUsS0FBYztRQUMvQyxNQUFNLEtBQUssR0FBRyxPQUFPLENBQUMsQ0FBQyxHQUFHLEtBQUssQ0FBQztRQUNoQyxNQUFNLEtBQUssR0FBRyxPQUFPLENBQUMsQ0FBQyxHQUFHLEtBQUssQ0FBQztRQUNoQyxNQUFNLEtBQUssR0FBRyxPQUFPLENBQUMsQ0FBQyxHQUFHLEtBQUssQ0FBQztRQUNoQyxPQUFPLElBQUkscUJBQU8sQ0FBQyxLQUFLLEVBQUUsS0FBSyxFQUFFLEtBQUssQ0FBQyxDQUFDO0lBQzVDLENBQUM7Q0FHSjtBQXZCRCxrQ0F1QkMifQ==","assetPath":"Assets/ClientScript/VectorExtention.ts","manifest":{"properties":[],"name":"VectorExtention","description":""},"isCompiled":true}'
-  typescriptHash: 69158afee9ced93a05783a8d79671caa
+  compiledResult: "{\"source\":\"\\\"use strict\\\";\\r\\nObject.defineProperty(exports,
+    \\\"__esModule\\\", { value: true });\\r\\nconst UnityEngine_1 = require(\\\"UnityEngine\\\");\\r\\n/**\\r\\n
+    * TS\uC5D0\uC11C\uB294 vector a + vector b \uAC00 \uC548\uB418\uB294 \uAC83 \uAC19\uC544
+    \uC784\uC2DC\uB85C \uC624\uD37C\uB808\uC774\uD130\uB97C \uB300\uCCB4\uD560 \uC775\uC2A4\uD150\uC158
+    \uC791\uC131\\r\\n * \uCD94\uD6C4 \uC624\uD37C\uB808\uC774\uD130 \uC801\uC6A9
+    \uAC00\uB2A5\uC2DC \uC218\uC815\uD55C\uB2E4.\\r\\n */\\r\\nclass VectorExtention
+    {\\r\\n    static Add(vectorA, vectorB) {\\r\\n        const diffX = vectorA.x
+    + vectorB.x;\\r\\n        const diffY = vectorA.y + vectorB.y;\\r\\n        const
+    diffZ = vectorA.z + vectorB.z;\\r\\n        return new UnityEngine_1.Vector3(diffX,
+    diffY, diffZ);\\r\\n    }\\r\\n    static Sub(vectorA, vectorB) {\\r\\n       
+    const diffX = vectorA.x - vectorB.x;\\r\\n        const diffY = vectorA.y - vectorB.y;\\r\\n       
+    const diffZ = vectorA.z - vectorB.z;\\r\\n        return new UnityEngine_1.Vector3(diffX,
+    diffY, diffZ);\\r\\n    }\\r\\n    static Mul(vectorA, value) {\\r\\n       
+    const diffX = vectorA.x * value;\\r\\n        const diffY = vectorA.y * value;\\r\\n       
+    const diffZ = vectorA.z * value;\\r\\n        return new UnityEngine_1.Vector3(diffX,
+    diffY, diffZ);\\r\\n    }\\r\\n}\\r\\nexports.default = VectorExtention;\\r\\n//#
+    sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVmVjdG9yRXh0ZW50aW9uLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiVmVjdG9yRXh0ZW50aW9uLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsNkNBQXFDO0FBSXJDOzs7R0FHRztBQUNILE1BQXFCLGVBQWU7SUFFekIsTUFBTSxDQUFDLEdBQUcsQ0FBQyxPQUFpQixFQUFFLE9BQWlCO1FBQ2xELE1BQU0sS0FBSyxHQUFHLE9BQU8sQ0FBQyxDQUFDLEdBQUcsT0FBTyxDQUFDLENBQUMsQ0FBQztRQUNwQyxNQUFNLEtBQUssR0FBRyxPQUFPLENBQUMsQ0FBQyxHQUFHLE9BQU8sQ0FBQyxDQUFDLENBQUM7UUFDcEMsTUFBTSxLQUFLLEdBQUcsT0FBTyxDQUFDLENBQUMsR0FBRyxPQUFPLENBQUMsQ0FBQyxDQUFDO1FBQ3BDLE9BQU8sSUFBSSxxQkFBTyxDQUFDLEtBQUssRUFBRSxLQUFLLEVBQUUsS0FBSyxDQUFDLENBQUM7SUFDNUMsQ0FBQztJQUVNLE1BQU0sQ0FBQyxHQUFHLENBQUMsT0FBaUIsRUFBRSxPQUFpQjtRQUNsRCxNQUFNLEtBQUssR0FBRyxPQUFPLENBQUMsQ0FBQyxHQUFHLE9BQU8sQ0FBQyxDQUFDLENBQUM7UUFDcEMsTUFBTSxLQUFLLEdBQUcsT0FBTyxDQUFDLENBQUMsR0FBRyxPQUFPLENBQUMsQ0FBQyxDQUFDO1FBQ3BDLE1BQU0sS0FBSyxHQUFHLE9BQU8sQ0FBQyxDQUFDLEdBQUcsT0FBTyxDQUFDLENBQUMsQ0FBQztRQUNwQyxPQUFPLElBQUkscUJBQU8sQ0FBQyxLQUFLLEVBQUUsS0FBSyxFQUFFLEtBQUssQ0FBQyxDQUFDO0lBQzVDLENBQUM7SUFFTSxNQUFNLENBQUMsR0FBRyxDQUFDLE9BQWlCLEVBQUUsS0FBYztRQUMvQyxNQUFNLEtBQUssR0FBRyxPQUFPLENBQUMsQ0FBQyxHQUFHLEtBQUssQ0FBQztRQUNoQyxNQUFNLEtBQUssR0FBRyxPQUFPLENBQUMsQ0FBQyxHQUFHLEtBQUssQ0FBQztRQUNoQyxNQUFNLEtBQUssR0FBRyxPQUFPLENBQUMsQ0FBQyxHQUFHLEtBQUssQ0FBQztRQUNoQyxPQUFPLElBQUkscUJBQU8sQ0FBQyxLQUFLLEVBQUUsS0FBSyxFQUFFLEtBQUssQ0FBQyxDQUFDO0lBQzVDLENBQUM7Q0FHSjtBQXhCRCxrQ0F3QkMifQ==\",\"assetPath\":\"Assets/ClientScript/VectorExtention.ts\",\"manifest\":{\"properties\":[],\"name\":\"VectorExtention\",\"description\":\"\"},\"isCompiled\":true}"
+  typescriptHash: 8635d0111f3b28e15b404aa279dd54aa
