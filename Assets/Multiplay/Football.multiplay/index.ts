@@ -1,7 +1,7 @@
 import { Sandbox, SandboxOptions, SandboxPlayer } from "ZEPETO.Multiplay";
 import { KickInfo, Player, Transform, Vector3 } from "ZEPETO.Multiplay.Schema";
 
-export default class extends Sandbox {
+export default class Server extends Sandbox {
 
     onCreate(options: SandboxOptions) {
 
