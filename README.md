@@ -1,4 +1,4 @@
-(old)zepeto app sample
+A Zepeto Minimal Multiplay Sample Project
 
 ## Screen Shot
     
